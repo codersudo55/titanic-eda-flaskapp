@@ -12,7 +12,10 @@ In this project, I have designed a Flask App which contains a login functionalit
 
 * Python 3.9+ (I have used Python 3.13)
 * virtualenv (venv) for running it locally
-* Installing all dependencies mentioned in requirements.txt using pip install -r requirements.txt
+* Installing all dependencies mentioned in requirements.txt using
+```
+pip install -r requirements.txt
+```
 * Describe any prerequisites, libraries, OS version, etc., needed before installing program.
 * Libraries - Flask, SQLAlchemy, numpy, pandas, plotly
 
