@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard_page.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="dashboard-header">
+            <h1>Titanic Dataset Exploratory Data Analysis Dashboard</h1>
+            <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+        </div>
+
+        <!-- Passenger Dataset Table -->
+        <h2>Dataset</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Passenger ID</th>
+                    <th>Name</th>
+                    <th>Survived</th>
+                    <th>Class</th>
+                    <th>Sex</th>
+                    <th>Age</th>
+                    <th>Siblings/Spouses</th>
+                    <th>Parents/Children</th>
+                    <th>Ticket</th>
+                    <th>Fare</th>
+                    <th>Cabin</th>
+                    <th>Embarked</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for passenger in passengers %}
+                <tr>
+                    <td>{{ passenger.PassengerId }}</td>
+                    <td>{{ passenger.Name }}</td>
+                    <td>{{ passenger.Survived }}</td>
+                    <td>{{ passenger.Pclass }}</td>
+                    <td>{{ passenger.Sex }}</td>
+                    <td>{{ passenger.Age }}</td>
+                    <td>{{ passenger.SibSp }}</td>
+                    <td>{{ passenger.Parch }}</td>
+                    <td>{{ passenger.Ticket }}</td>
+                    <td>{{ passenger.Fare }}</td>
+                    <td>{{ passenger.Cabin }}</td>
+                    <td>{{ passenger.Embarked }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Graphs -->
+        <div class="graph-container">
+            <h2>Exploratory Data Analysis</h2>
+            <div>
+                {{ graph1|safe }}
+            </div>
+            <div>
+                {{ graph2|safe }}
+            </div>
+            <div>
+                {{ graph3|safe }}
+            </div>
+            <div>
+                {{ graph4|safe }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
