@@ -7,9 +7,13 @@ def seed_database():
     # Load the Titanic dataset
     df = pd.read_csv("titanic_dataset.csv")
 
-    # Create tables and insert data
+    # Create tables and insert data (to avoid duplicate entries)
     with app.app_context():
-        db.create_all()
+        # db.drop_all()  #  Drop all tables
+        # db.create_all() # Recreate them
+        # Clear only the Passenger table
+        Passenger.query.delete()
+        db.session.commit()
 
         # Insert data into the database
         for _, row in df.iterrows():
