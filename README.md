@@ -103,7 +103,11 @@ $ .\venv\Scripts\activate
 ```
 $ (venv) pip install -r requirements.txt
 ```
-5. Finally start the web server:
+5. First run the script to seed csv data to database:
+```
+$ (venv) python seed_db.py
+```
+6. Finally start the web server:
 ```
 $ (venv) python app.py
 ```

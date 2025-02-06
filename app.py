@@ -6,7 +6,7 @@ import plotly.express as px
 import pandas as pd
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Required for session management
+app.secret_key = '\x0e\xab\xc1\xfd\x94&NaG\xe1\x83\xc03_\xfe\xack\xa1B\x16\xb7\xd5OR'  # Required for session management (os.urandom(24))
 
 # DB Component declaration for users and passengers
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///titanic.db'  # SQLite database file
