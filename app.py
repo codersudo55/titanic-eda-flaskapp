@@ -15,11 +15,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Initialize the database with the Flask app
 db.init_app(app)
 
-
-# # Hardcoded credentials
-# ADMIN_USERNAME = 'admin'
-# ADMIN_PASSWORD = 'password'
-
 # Home Page
 @app.route('/')
 def home():
@@ -59,14 +54,6 @@ def login():
 
     # Check if the user exists in the database
     user = User.query.filter_by(username=username).first()
-
-    # # Check if the credentials are correct
-    # if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
-    #     session['logged_in'] = True
-    #     return redirect(url_for('dashboard'))
-    # else:
-    #     # If credentials are incorrect, show an error message
-    #     return render_template('login.html', error='Invalid username or password')
 
     if user and user.check_password(password):
         session['logged_in'] = True
@@ -163,5 +150,4 @@ if __name__ == '__main__':
     # Create the database tables (if they don't exist)
     with app.app_context():
         db.create_all() # Create all tables (User and Passenger)
-
     app.run(debug=True)

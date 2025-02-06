@@ -23,13 +23,13 @@ def seed_database():
                 Pclass=row['Pclass'],
                 Name=row['Name'],
                 Sex=row['Sex'],
-                Age=row['Age'],
+                Age=row['Age'] if pd.notna(row['Age']) else None,
                 SibSp=row['SibSp'],
                 Parch=row['Parch'],
                 Ticket=row['Ticket'],
-                Fare=row['Fare'],
-                Cabin=row['Cabin'],
-                Embarked=row['Embarked']
+                Fare=row['Fare'] if pd.notna(row['Fare']) else None,
+                Cabin=row['Cabin'] if pd.notna(row['Cabin']) else None,
+                Embarked=row['Embarked'] if pd.notna(row['Embarked']) else None
             )
             db.session.add(passenger)
         db.session.commit()

@@ -20,5 +20,5 @@ EXPOSE 5000
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
-# Run the application
-CMD ["flask", "run"]
+# Run the seed script and then start the Flask app
+CMD ["sh", "-c", "python seed_db.py && flask run"]
