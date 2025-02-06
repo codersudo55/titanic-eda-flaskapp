@@ -79,7 +79,7 @@ Based on the visualizations, the following insights were derived:
 
 
 
-### How to Run Flask App Locally
+## How to Run Flask App Locally
 
 1. Clone the repository and open the project folder:
 ```
