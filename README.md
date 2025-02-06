@@ -12,11 +12,6 @@ In this project, I have designed a Flask App which contains a login functionalit
 
 * Python 3.9+ (I have used Python 3.13)
 * virtualenv (venv) for running it locally
-* Installing all dependencies mentioned in requirements.txt using
-```
-pip install -r requirements.txt
-```
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
 * Libraries - Flask, SQLAlchemy, numpy, pandas, plotly
 
 ### Installing
@@ -24,22 +19,34 @@ pip install -r requirements.txt
 * How/where to download your program
 * Any modifications needed to be made to files/folders
 
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
+### How to Run Flask App Locally
+1. Install `virtualenv`:
 ```
-code blocks for commands
+$ pip install virtualenv
 ```
-
-## Help
-
-Any advise for common problems or issues.
+2. Open a terminal in the project root directory and run:
 ```
-command to run if program contains helper info
+$ virtualenv venv
 ```
+3. Then run the command:
+```
+$ .\venv\Scripts\activate
+```
+4. Then install the dependencies:
+```
+$ (venv) pip install -r requirements.txt
+```
+5. Finally start the web server:
+```
+$ (venv) python app.py
+```
+This server will start on port 5000 by default. You can change this in `app.py` by changing the following line to this:
 
-## Authors
+```python
+if __name__ == "__main__":
+    app.run(debug=True, port=<desired port>)
 
+
+## Author
 Sudarshan Srinivasan
 
