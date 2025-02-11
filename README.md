@@ -43,6 +43,7 @@ In this project, I have designed a Flask App which contains a login functionalit
 ### 6. **Deployment**
    - The Flask app is containerized using **Docker** for easy deployment.
    - It can be deployed locally or on cloud platforms like Heroku, AWS, or Google Cloud.
+   - I have used `Render` - a free cloud service to upload my dashboard - ([@Live Website URL](https://codersudo55-titanic-flaskapp.onrender.com))
 
 ## Observations
 Based on the visualizations, the following insights were derived:
@@ -74,17 +75,14 @@ Based on the visualizations, the following insights were derived:
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-
+* Python Installation - https://www.python.org/downloads/
+* Microsoft Visual Studio Code Installation (IDE to run your code locally and for Source Control operations) -  https://code.visualstudio.com/download 
 
 ## How to Run Flask App Locally
 
 1. Clone the repository and open the project folder:
 ```
 $ git clone https://github.com/codersudo55/titanic-eda-flaskapp.git
-
 ```
 
 2. Install `virtualenv`:
